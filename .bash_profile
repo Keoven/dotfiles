@@ -2,6 +2,7 @@
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:$HOME/SDKs/android-sdk-mac_x86/tools
 export PATH=$PATH:$HOME/SDKs/android-sdk-mac_x86/platform-tools
+export JRUBY_INVOCATION="$(readlink "$(which celerity_jruby)")"
 
 # Terminal Settings
 export CLICOLOR=1
