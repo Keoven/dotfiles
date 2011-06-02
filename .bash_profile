@@ -7,7 +7,7 @@ export JRUBY_INVOCATION="$(readlink "$(which celerity_jruby)")"
 # Terminal Settings
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-export PS1="\e[1;30m\][\e[\e[1;30m\]\e[1;33m\] \u@\H \[\e[1;32m\]\w\[\e[0m\] \e[1;30m\]]\n[\[ \e[1;31m\]\T\[\e[0m\]\e[1;30m\] ] > \e[0;37m"
+export PS1="\[\e[1;31m\]\T \[\e[1;32m\]\w \[\e[1;30m\]> \[\e[0m\]"
 export PAGER=most
 
 # Global Alias
