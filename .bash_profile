@@ -4,10 +4,15 @@ export PATH=$PATH:$HOME/SDKs/android-sdk-mac_x86/tools
 export PATH=$PATH:$HOME/SDKs/android-sdk-mac_x86/platform-tools
 export JRUBY_INVOCATION="$(readlink "$(which celerity_jruby)")"
 
+# Prompt
+green="\[\e[1;32m\]"
+red="\[\e[1;31m\]"
+grey="\[\e[1;30m\]"
+export PS1="$grey[ $green\w$grey ]\n[ $red\T $grey] > \[\e[0m\]"
+
 # Terminal Settings
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-export PS1="\[\e[1;31m\]\T \[\e[1;32m\]\w \[\e[1;30m\]> \[\e[0m\]"
 export PAGER=most
 
 # Global Alias
