@@ -49,7 +49,6 @@ alias hosts="sudo vim /etc/hosts"
 
 
 # RVM
+unsetopt auto_name_dirs
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-if [[ -f "$PWD/.rvmrc" ]]; then
-  "$PWD/.rvmrc"
-fi
+__rvm_project_rvmrc
