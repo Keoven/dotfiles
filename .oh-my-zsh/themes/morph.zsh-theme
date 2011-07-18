@@ -34,8 +34,8 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*:*' check-for-changes true # Can be slow on big repos.
 zstyle ':vcs_info:*:*' unstagedstr '!'
 zstyle ':vcs_info:*:*' stagedstr '+'
-zstyle ':vcs_info:*:*' actionformats "%S" "%r %u (%a)"
-zstyle ':vcs_info:*:*' formats "%S" "%r %u"
+zstyle ':vcs_info:*:*' actionformats "%S" "%r ❖ %b %u (%a)"
+zstyle ':vcs_info:*:*' formats "%S" "%r ❖ %b %u"
 zstyle ':vcs_info:*:*' nvcsformats "%~" ""
 
 # Define prompts.
@@ -54,4 +54,4 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}✭$FG[071] "
 
 PROMPT="$PROMPT_SUCCESS_COLOR${SSH_TTY:+[%n@%m]}%{$FX[bold]%}%$PROMPT_PATH_MAX_LENGTH<..<"'☁ ${vcs_info_msg_0_%%.} $(git_prompt_status)'"%<<
 %(0?.%{$PROMPT_SUCCESS_COLOR%}.%{$PROMPT_FAILURE_COLOR%})%(!.$PROMPT_ROOT_END.$PROMPT_DEFAULT_END)%{$FX[no-bold]%}%{$FX[reset]%} "
-RPROMPT="%{$PROMPT_VCS_INFO_COLOR%}$(git_prompt_info) ❖ "'$vcs_info_msg_1_'"%{$FX[reset]%}"
+RPROMPT="%{$PROMPT_VCS_INFO_COLOR%}"'$vcs_info_msg_1_'"%{$FX[reset]%}"
