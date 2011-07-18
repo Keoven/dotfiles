@@ -40,11 +40,6 @@ zstyle ':vcs_info:*:*' nvcsformats "%~" ""
 
 # Define prompts.
 
-ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_DIRTY=""
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}✚$FG[071] "
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%}✹$FG[071] "
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖$FG[071] "
