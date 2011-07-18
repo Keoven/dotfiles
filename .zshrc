@@ -21,7 +21,7 @@ export ZSH_THEME="morph"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rvm brew bundler cap gem git-flow)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
