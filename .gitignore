@@ -59,6 +59,7 @@ Workspace
 .oh-my-zsh/templates
 .oh-my-zsh/tools
 .oh-my-zsh/themes/*
+.oh-my-zsh/*
 !.oh-my-zsh/themes/morph.zsh-theme
 .project_aliases
 .psql_history
