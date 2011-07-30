@@ -47,6 +47,8 @@ alias hosts="sudo vim /etc/hosts"
 # Project Alias
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"
 
+# NVM
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
 # RVM
 unsetopt auto_name_dirs
