@@ -71,6 +71,7 @@ Workspace
 .ri
 .rush
 .rvm
+.rvmrc
 .ssh
 .ssl
 .subversion

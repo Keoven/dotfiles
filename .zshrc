@@ -30,6 +30,7 @@ export PATH=/Users/Driz/.rvm/gems/ruby-1.8.7-p330/bin:/Users/Driz/.rvm/gems/ruby
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PAGER=most
+export CC=gcc-4.2
 
 # Global Alias
 alias rc="wrapped_redcar"
