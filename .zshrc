@@ -26,7 +26,7 @@ plugins=()
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/Driz/.rvm/gems/ruby-1.8.7-p330/bin:/Users/Driz/.rvm/gems/ruby-1.8.7-p330@global/bin:/Users/Driz/.rvm/rubies/ruby-1.8.7-p330/bin:/Users/Driz/.rvm/bin:/Users/Driz/.nvm/v0.4.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin:/Users/Driz/SDKs/android-sdk-mac_x86/tools:/Users/Driz/SDKs/android-sdk-mac_x86/platform-tools
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin
 export PATH=/usr/local/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -34,12 +34,10 @@ export PAGER=less
 export CC=gcc-4.2
 
 # Global Alias
-alias rc="wrapped_redcar"
 alias cheat="wrapped_cheat"
 alias bcat="wrapped_bcat"
 alias lunchy="wrapped_lunchy"
 alias htty="wrapped_htty"
-alias rush="wrapped_rush"
 alias nginx-start="sudo nginx"
 alias nginx-stop="sudo nginx -s stop"
 alias nginx-restart="sudo nginx -s reload"
