@@ -23,6 +23,7 @@ Workspace
 .mcli
 .lesshst
 .mkvtoolnix
+.pry_history
 .serverauth.8101
 .sh_history
 .vmc_instances
