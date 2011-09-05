@@ -21,6 +21,7 @@ Workspace
 .Trash
 .irb-history
 .mcli
+.strobe
 .lesshst
 .mkvtoolnix
 .pry_history
