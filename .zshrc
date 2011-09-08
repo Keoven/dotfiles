@@ -32,6 +32,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PAGER=less
 export CC=gcc-4.2
+export BUNDLER_EDITOR=mvim
 
 # Global Alias
 alias cheat="wrapped_cheat"
