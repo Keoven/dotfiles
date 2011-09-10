@@ -37,7 +37,7 @@ export BUNDLER_EDITOR=mvim
 # Global Alias
 alias cheat="wrapped_cheat"
 alias bcat="wrapped_bcat"
-alias powify="wrapped_powify"
+alias pow="wrapped_powify"
 alias foreman="wrapped_foreman"
 #alias lunchy="wrapped_lunchy"
 #alias htty="wrapped_htty"

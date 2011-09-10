@@ -24,6 +24,7 @@ Workspace
 .strobe
 .lesshst
 .mkvtoolnix
+.pow
 .pry_history
 .serverauth.8101
 .sh_history
