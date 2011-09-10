@@ -37,13 +37,15 @@ export BUNDLER_EDITOR=mvim
 # Global Alias
 alias cheat="wrapped_cheat"
 alias bcat="wrapped_bcat"
-alias lunchy="wrapped_lunchy"
-alias htty="wrapped_htty"
-alias nginx-start="sudo nginx"
-alias nginx-stop="sudo nginx -s stop"
-alias nginx-restart="sudo nginx -s reload"
-alias nginx-conf="sudo vim /usr/local/etc/nginx/nginx.conf"
-alias hosts="sudo vim /etc/hosts"
+alias powify="wrapped_powify"
+alias foreman="wrapped_foreman"
+#alias lunchy="wrapped_lunchy"
+#alias htty="wrapped_htty"
+#alias nginx-start="sudo nginx"
+#alias nginx-stop="sudo nginx -s stop"
+#alias nginx-restart="sudo nginx -s reload"
+#alias nginx-conf="sudo vim /usr/local/etc/nginx/nginx.conf"
+#alias hosts="sudo vim /etc/hosts"
 
 # Project Alias
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"
