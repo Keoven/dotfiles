@@ -47,6 +47,10 @@ alias foreman="wrapped_foreman"
 #alias nginx-conf="sudo vim /usr/local/etc/nginx/nginx.conf"
 #alias hosts="sudo vim /etc/hosts"
 
+function redis-reset {
+  redis-cli keys  "*" | while read LINE ; do TTL=$(redis-cli ttl $LINE); if [ $TTL -eq -1 ]; then echo "Del $LINE"; RES=$(redis-cli del $LINE); fi; done;
+}
+
 # Project Alias
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"
 
