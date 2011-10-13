@@ -27,6 +27,7 @@ alias nginx-stop="sudo nginx -s stop"
 alias nginx-restart="sudo nginx -s reload"
 alias nginx-conf="sudo vim /usr/local/etc/nginx/nginx.conf"
 alias hosts="sudo vim /etc/hosts"
+alias synergy-start="synergys -f --config ~/.synergy.conf"
 
 # Project Alias
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"

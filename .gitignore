@@ -15,6 +15,7 @@ VirtualBox VMs/
 Workspace
 
 # Artifacts
+.synergy.conf
 .CFUserTextEncoding
 .DS_Store
 .NERDTreeBookmarks
