@@ -15,6 +15,9 @@ VirtualBox VMs/
 Workspace
 
 # Artifacts
+.gitignore_global
+.hgignore_global
+.hgrc
 .synergy.conf
 .CFUserTextEncoding
 .DS_Store
