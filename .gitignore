@@ -18,6 +18,7 @@ Workspace
 .gitignore_global
 .hgignore_global
 .hgrc
+.mysql_history
 .synergy.conf
 .CFUserTextEncoding
 .DS_Store
