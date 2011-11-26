@@ -42,6 +42,8 @@ alias bcat="wrapped_bcat"
 alias pow="wrapped_powify"
 alias foreman="wrapped_foreman"
 alias synergy-start="synergys -f --config ~/.synergy.conf"
+alias gdoc="gem server"
+
 #alias lunchy="wrapped_lunchy"
 #alias htty="wrapped_htty"
 #alias nginx-start="sudo nginx"
