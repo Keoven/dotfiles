@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin
 export PATH=$HOME/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/Library/Zabbix/bin:$HOME/Library/Zabbix/sbin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -39,7 +40,6 @@ export BUNDLER_EDITOR=mvim
 # Global Alias
 alias cheat="wrapped_cheat"
 alias bcat="wrapped_bcat"
-alias pow="wrapped_powify"
 alias foreman="wrapped_foreman"
 alias synergy-start="synergys -f --config ~/.synergy.conf"
 alias gdoc="gem server"
