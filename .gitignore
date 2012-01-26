@@ -44,6 +44,7 @@ DOS Games
 .zsh-update
 .zsh_history
 .ypp*
+.cache
 
 # Application Data
 .Xauthority
