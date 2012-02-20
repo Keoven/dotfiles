@@ -14,8 +14,10 @@ Sites
 VirtualBox VMs/
 Workspace
 DOS Games
+Vagrant
 
 # Artifacts
+.fonts
 .vagrant
 .vagrant.d
 .rbx
