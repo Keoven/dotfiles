@@ -29,7 +29,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin
 export PATH=$HOME/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/Library/Zabbix/bin:$HOME/Library/Zabbix/sbin:$PATH
+export PATH=/usr/local/share/python:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -68,3 +68,5 @@ unsetopt auto_name_dirs
 __rvm_project_rvmrc
 
 #echo "Last OSS Commit: $(curl -s "http://calendaraboutnothing.com/~keoven.json" | sed -E 's/.*"(.*)"].*/\1/')"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
