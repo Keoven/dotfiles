@@ -30,6 +30,7 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin
 export PATH=$HOME/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
+export PATH=/usr/local/Cellar/ruby/1.9.3-p125/bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
