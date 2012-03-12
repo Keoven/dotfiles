@@ -1,0 +1,5 @@
+[user]
+	name = Nelvin Driz
+	email = nelvindriz@live.com
+[commit]
+	template = ~/.git_templates/git-commit-template.default
