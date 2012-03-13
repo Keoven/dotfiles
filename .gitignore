@@ -57,6 +57,7 @@ Vagrant
 .codeintel
 .config
 .cups
+.DBUserDefaults
 .dropbox
 .dvdcss
 .fontconfig
