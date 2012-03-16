@@ -1,6 +1,7 @@
 set transparency=5
 set guioptions=aAce
 set columns=100
+"set background=light
 set background=dark
 colorscheme solarized
 set guifont=Menlo:h12
