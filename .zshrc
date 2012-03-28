@@ -44,6 +44,8 @@ alias bcat="wrapped_bcat"
 alias synergy-start="synergys -f --config ~/.synergy.conf"
 alias gdoc="gem server"
 
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
+
 #alias foreman="wrapped_foreman"
 #alias lunchy="wrapped_lunchy"
 #alias htty="wrapped_htty"
