@@ -20,6 +20,7 @@ Vagrant
 .fonts
 .vagrant
 .vagrant.d
+.pip
 .rbx
 .gitignore_global
 .hgignore_global
