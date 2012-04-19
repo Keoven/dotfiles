@@ -48,6 +48,7 @@ Vagrant
 .zsh_history
 .ypp*
 .cache
+.netrc
 
 # Application Data
 .Xauthority
@@ -98,3 +99,4 @@ Vagrant
 .vimrc
 .vimrc.old
 .vim-cache
+.node_libraries
