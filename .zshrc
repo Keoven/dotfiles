@@ -59,6 +59,15 @@ function redis-reset {
   redis-cli keys  "*" | while read LINE ; do TTL=$(redis-cli ttl $LINE); if [ $TTL -eq -1 ]; then echo "Del $LINE"; RES=$(redis-cli del $LINE); fi; done;
 }
 
+function alert-on-finish {
+  if [ "$?" -eq "0" ]
+  then
+    say -v Trinoid “Task Done”
+  else
+    say -v Trinoid “Task Error”
+  fi
+}
+
 # Project Alias
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"
 
