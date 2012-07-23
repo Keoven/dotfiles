@@ -2,3 +2,14 @@ syntax on
 set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+autocmd BufNewFile,BufReadPost *.as set filetype=action_script
+function! RemoveTab()
+ %s/\r/\r/g
+ %s/\s*$//g
+ set ff=dos
+ set ffs=dos
+ retab!
+endfunction
