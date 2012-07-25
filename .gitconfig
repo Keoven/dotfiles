@@ -14,3 +14,8 @@
 	graft = !legit graft \"$@\"
 [credential]
 	helper = osxkeychain
+[color]
+	diff = auto
+	interactive = auto
+	status = auto
+	branch = auto
