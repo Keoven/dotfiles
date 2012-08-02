@@ -1,6 +1,6 @@
 [user]
 	name = Nelvin Driz
-	email = nelvindriz@live.com
+	email = nelvindriz@outlook.com
 [commit]
 	template = ~/.git_templates/git-commit-template.default
 [alias]
@@ -19,3 +19,11 @@
 	interactive = auto
 	status = auto
 	branch = auto
+[core]
+	excludesfile = /Users/nelvindriz/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
