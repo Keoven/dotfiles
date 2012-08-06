@@ -103,3 +103,4 @@ Google Drive
 .vimrc.old
 .vim-cache
 .node_libraries
+.virtualenvs
