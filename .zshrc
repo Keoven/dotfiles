@@ -38,6 +38,9 @@ export PAGER=less
 export CC=gcc-4.2
 export BUNDLER_EDITOR=mvim
 
+export VISUAL=vim
+export EDITOR=vim
+
 # Global Alias
 alias cheat="wrapped_cheat"
 alias bcat="wrapped_bcat"
