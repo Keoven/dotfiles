@@ -17,6 +17,7 @@ DOS Games
 Vagrant
 SkyDrive
 Google Drive
+Ubuntu One/
 
 # Artifacts
 .fonts
@@ -131,3 +132,6 @@ Google Drive
 .zlogin
 .zshrc.pre-oh-my-zsh
 examples.desktop
+.Skype/
+.nv/
+.synaptic/

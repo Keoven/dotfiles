@@ -35,7 +35,14 @@ export NODE_PATH=/usr/local/lib/node_modules
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PAGER=less
-export CC=gcc-4.2
+
+if [ -e /proc/version ]
+then # Linux
+  export CC=gcc-4.6
+else # Windows
+  export CC=gcc-4.2
+fi
+
 export BUNDLER_EDITOR=mvim
 
 export VISUAL=vim
