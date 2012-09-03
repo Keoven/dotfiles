@@ -14,10 +14,10 @@
 	graft = !legit graft \"$@\"
   lo = log --online --decorate
   st = status -sb
-  psr = !sh -c 'git push --set-upstream $1 $2'
-  cco = !sh -c 'git name-rev --name-only $1'
-  coco = !sh -c 'git branch -a --contains $1'
-  cmpb = !sh -c 'git cherry -v $1'
+  psr = !sh -c 'git push --set-upstream $0 $1'
+  cco = !sh -c 'git name-rev --name-only $0'
+  coco = !sh -c 'git branch -a --contains $0'
+  cmpb = !sh -c 'git cherry -v $0'
 	alias = config --get-regexp 'alias.*'
 [credential]
 	helper = osxkeychain
