@@ -12,6 +12,13 @@
 	sync = !legit sync \"$@\"
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
+  lo = log --online --decorate
+  st = status -sb
+  psr = !sh -c 'git push --set-upstream $1 $2'
+  cco = !sh -c 'git name-rev --name-only $1'
+  coco = !sh -c 'git branch -a --contains $1'
+  cmpb = !sh -c 'git cherry -v $1'
+	alias = config --get-regexp 'alias.*'
 [credential]
 	helper = osxkeychain
 [color]
@@ -27,3 +34,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[push]
+	default = tracking
