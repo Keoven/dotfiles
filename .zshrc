@@ -36,6 +36,9 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PAGER=less
 
+export LC_CTYPE=en_US.UTF-8 # For Cucumber Gherkin/JSON Compatibility Fix
+# https://github.com/cucumber/gherkin/issues/192
+
 if [ -e /proc/version ]
 then # Linux
   export CC=gcc-4.6
