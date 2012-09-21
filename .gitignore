@@ -20,6 +20,7 @@ Google Drive
 Ubuntu One/
 
 # Artifacts
+.vboxclient*
 .fonts
 .vagrant
 .vagrant.d
