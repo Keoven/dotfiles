@@ -21,6 +21,7 @@ Ubuntu One/
 
 # Artifacts
 .vboxclient*
+.heroku
 .fonts
 .vagrant
 .vagrant.d
