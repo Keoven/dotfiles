@@ -20,6 +20,7 @@ Google Drive
 Ubuntu One/
 
 # Artifacts
+.tilemill
 .vboxclient*
 .heroku
 .fonts
