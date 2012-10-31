@@ -81,6 +81,11 @@ function alert-on-finish {
   fi
 }
 
+# Tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+export EDITOR=vim
+export SHELL=zsh
+
 # Project Alias
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"
 
