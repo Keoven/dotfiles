@@ -142,3 +142,4 @@ examples.desktop
 .dropbox-dist/
 .nevernote/
 .sauce
+.tmuxinator
