@@ -18,8 +18,11 @@ Vagrant
 SkyDrive
 Google Drive
 Ubuntu One/
+SDK
 
 # Artifacts
+.deltafy/
+.titanium/
 .eclipse
 .recently-used
 .tddium
