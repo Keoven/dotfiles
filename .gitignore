@@ -148,3 +148,9 @@ examples.desktop
 .nevernote/
 .sauce
 .tmuxinator
+
+# Ubuntu
+.compiz/
+.macromedia/
+.zprofile
+xaa
