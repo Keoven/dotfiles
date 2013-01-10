@@ -19,8 +19,6 @@
   coco = !sh -c 'git branch -a --contains $0'
   cmpb = !sh -c 'git cherry -v $0'
 	alias = config --get-regexp 'alias.*'
-[credential]
-	helper = osxkeychain
 [color]
 	diff = auto
 	interactive = auto
