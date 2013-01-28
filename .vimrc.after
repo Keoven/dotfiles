@@ -1,7 +1,21 @@
-syntax on
-set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
+" For theme support in gnome terminal (Ubuntu)
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=
+  syntax enable
+  if has('gui_running')
+    set background=light
+  else
+    set background=dark
+  endif
+  set t_Co=16
+  let g:solarized_termcolors=16
+  colorscheme solarized
+else
+  syntax on
+  set background=dark
+  let g:solarized_termtrans = 1
+  colorscheme solarized
+endif
 
 autocmd BufWritePre * :%s/\s\+$//e
 

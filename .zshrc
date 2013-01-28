@@ -59,6 +59,9 @@ alias gdoc="gem server"
 
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
 
+alias dark-terminal=". ~/.gnome-terminal-colors-solarized/set_dark.sh"
+alias light-terminal=". ~/.gnome-terminal-colors-solarized/set_light.sh"
+
 #alias foreman="wrapped_foreman"
 #alias lunchy="wrapped_lunchy"
 #alias htty="wrapped_htty"
