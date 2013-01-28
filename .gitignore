@@ -154,3 +154,5 @@ examples.desktop
 .macromedia/
 .zprofile
 xaa
+.nvpy
+.nvpy.cfg
