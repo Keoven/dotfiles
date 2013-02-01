@@ -57,10 +57,15 @@ alias bcat="wrapped_bcat"
 alias synergy-start="synergys -f --config ~/.synergy.conf"
 alias gdoc="gem server"
 
-alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
 
-alias dark-terminal=". ~/.gnome-terminal-colors-solarized/set_dark.sh"
-alias light-terminal=". ~/.gnome-terminal-colors-solarized/set_light.sh"
+case "$OSTYPE" in
+  linux*)
+    alias open="xdg-open"
+    alias dark-terminal=". ~/.gnome-terminal-colors-solarized/set_dark.sh"
+    alias light-terminal=". ~/.gnome-terminal-colors-solarized/set_light.sh" ;;
+  darwin*)
+    alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc' ;;
+esac
 
 #alias foreman="wrapped_foreman"
 #alias lunchy="wrapped_lunchy"
