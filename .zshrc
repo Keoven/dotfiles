@@ -56,6 +56,7 @@ alias cheat="wrapped_cheat"
 alias bcat="wrapped_bcat"
 alias synergy-start="synergys -f --config ~/.synergy.conf"
 alias gdoc="gem server"
+alias serve-directory="ruby -r webrick -e \"s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
 
 
 case "$OSTYPE" in
