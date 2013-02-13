@@ -159,3 +159,4 @@ xaa
 .signon
 .git_templates/*
 !.git_templates/git-commit-template.default
+.purple
