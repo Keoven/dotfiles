@@ -40,3 +40,5 @@ alias synergy-start="synergys -f --config ~/.synergy.conf"
 if [[ -f "$PWD/.rvmrc" ]]; then
   . "$PWD/.rvmrc"
 fi
+
+source ~/.profile

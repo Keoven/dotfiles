@@ -26,7 +26,7 @@ plugins=()
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin
 export PATH=$HOME/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
