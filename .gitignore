@@ -160,3 +160,9 @@ xaa
 .git_templates/*
 !.git_templates/git-commit-template.default
 .purple
+.VirtualBox/
+.berkshelf/
+.java/
+.minecraft/
+.node-gyp/
+tmp/

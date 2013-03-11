@@ -34,3 +34,7 @@
 	trustExitCode = true
 [push]
 	default = tracking
+[credential]
+	helper = cache --timeout=3600
+[http]
+	postBuffer = 524288000
