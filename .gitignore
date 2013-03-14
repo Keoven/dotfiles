@@ -166,3 +166,4 @@ xaa
 .minecraft/
 .node-gyp/
 tmp/
+.vmc/
