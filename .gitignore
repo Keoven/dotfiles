@@ -168,3 +168,5 @@ xaa
 tmp/
 .vmc/
 .dbshell
+.gimp-2.8/
+.gksu.lock
