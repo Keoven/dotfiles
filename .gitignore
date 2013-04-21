@@ -170,3 +170,7 @@ tmp/
 .gimp-2.8/
 .gksu.lock
 .m2
+.guvcviewrc
+.pem/
+.sqlite_history
+.xchat2
