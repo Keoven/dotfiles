@@ -62,6 +62,7 @@ SDK
 .cache
 .netrc
 .serverauth.*
+.keys
 
 # Application Data
 .Xauthority
