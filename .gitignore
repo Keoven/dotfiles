@@ -96,6 +96,7 @@ SDK
 .oh-my-zsh/*
 !.oh-my-zsh/themes/morph.zsh-theme
 .janus
+.mongorc.js
 
 .project_aliases
 .psql_history
