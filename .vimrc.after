@@ -9,12 +9,16 @@ if $COLORTERM == 'gnome-terminal'
   endif
   let g:solarized_termcolors=256
   color solarized
+  hi Normal ctermbg=NONE
 else
   syntax on
   set background=dark
   let g:solarized_termtrans = 1
   colorscheme solarized
 endif
+
+" Allow CTRL+C into default into system clipboard
+vmap <C-c> "+y
 
 autocmd BufWritePre * :%s/\s\+$//e
 
