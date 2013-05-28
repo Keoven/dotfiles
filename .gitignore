@@ -178,3 +178,4 @@ tmp/
 .pem/
 .sqlite_history
 .xchat2
+.fst
