@@ -179,3 +179,5 @@ tmp/
 .sqlite_history
 .xchat2
 .fst
+.Skype*
+Apps
