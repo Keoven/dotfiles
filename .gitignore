@@ -181,3 +181,5 @@ tmp/
 .fst
 .Skype*
 Apps
+.lighttable/
+libpeerconnection.log
