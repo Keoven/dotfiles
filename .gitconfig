@@ -38,3 +38,7 @@
 	helper = cache --timeout=3600
 [http]
 	postBuffer = 524288000
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 700x848+214+320
+	main-window-view = FileView
