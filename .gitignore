@@ -21,6 +21,7 @@ Ubuntu One/
 SDK
 
 # Artifacts
+.shutter
 .deltafy/
 .titanium/
 .eclipse
