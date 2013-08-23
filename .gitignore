@@ -153,6 +153,8 @@ examples.desktop
 .sauce
 .tmuxinator
 .tmux-powerline
+.cf
+.speech-dispatcher
 
 # Ubuntu
 .compiz/
