@@ -186,3 +186,9 @@ tmp/
 Apps
 .lighttable/
 libpeerconnection.log
+.icons
+.themes
+.uaac.yml
+.zcompdump-ubuntu-5.0.0
+mike-mail.pdf
+.audacity-data
