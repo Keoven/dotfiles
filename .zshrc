@@ -98,6 +98,7 @@ export SHELL=zsh
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"
 
 # NVM
+export NVM_DIR=$HOME/.nvm
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
 #echo "Last OSS Commit: $(curl -s "http://calendaraboutnothing.com/~keoven.json" | sed -E 's/.*"(.*)"].*/\1/')"
