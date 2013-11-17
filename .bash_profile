@@ -36,9 +36,10 @@ alias synergy-start="synergys -f --config ~/.synergy.conf"
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 if [[ -f "$PWD/.rvmrc" ]]; then
   . "$PWD/.rvmrc"
 fi
 
 source ~/.profile
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

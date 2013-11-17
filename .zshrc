@@ -58,7 +58,6 @@ alias synergy-start="synergys -f --config ~/.synergy.conf"
 alias gdoc="gem server"
 alias serve-directory="ruby -r webrick -e \"s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
 
-
 case "$OSTYPE" in
   linux*)
     alias open="xdg-open"
@@ -101,16 +100,16 @@ export SHELL=zsh
 # NVM
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
-# RVM
-unsetopt auto_name_dirs
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-__rvm_project_rvmrc
-
 #echo "Last OSS Commit: $(curl -s "http://calendaraboutnothing.com/~keoven.json" | sed -E 's/.*"(.*)"].*/\1/')"
 [[ -s "/usr/local/share/python/virtualenvwrapper.sh" ]] && source /usr/local/share/python/virtualenvwrapper.sh
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+# RVM
+#unsetopt auto_name_dirs
+#__rvm_project_rvmrc
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
