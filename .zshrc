@@ -41,7 +41,7 @@ export LC_CTYPE=en_US.UTF-8 # For Cucumber Gherkin/JSON Compatibility Fix
 
 if [ -e /proc/version ]
 then # Linux
-  export CC=gcc-4.7
+  export CC=gcc-4.8
 else # Windows
   export CC=gcc-4.2
 fi
