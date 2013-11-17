@@ -1,9 +1,9 @@
-# Folders
 Applications
 Desktop
 Documents
 Downloads
 Dropbox
+# Folders
 Library
 Movies
 Music
@@ -64,6 +64,7 @@ SDK
 .netrc
 .serverauth.*
 .keys
+.quicksnips
 
 # Application Data
 .Xauthority
@@ -192,3 +193,4 @@ libpeerconnection.log
 .zcompdump-ubuntu-5.0.0
 mike-mail.pdf
 .audacity-data
+.zcompdump*
