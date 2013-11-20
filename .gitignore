@@ -1,9 +1,9 @@
+# Folders
 Applications
 Desktop
 Documents
 Downloads
 Dropbox
-# Folders
 Library
 Movies
 Music
@@ -191,6 +191,6 @@ libpeerconnection.log
 .themes
 .uaac.yml
 .zcompdump-ubuntu-5.0.0
-mike-mail.pdf
 .audacity-data
 .zcompdump*
+npm-debug.log
