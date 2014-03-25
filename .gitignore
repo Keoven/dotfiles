@@ -68,6 +68,7 @@ SDK
 .quicksnips
 
 # Application Data
+.icedtea
 .Xauthority
 .adobe
 .android
