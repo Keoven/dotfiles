@@ -121,7 +121,10 @@ SDK
 .vimrc.old
 .vim-cache
 .node_libraries
-.virtualenvs
+.venvburrito
+.zprofile
+.virtualenvs/*
+!.virtualenvs/postactivate
 
 .ICEauthority
 .bash_login
