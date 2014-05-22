@@ -2,5 +2,7 @@
 # This hook is run after every virtualenv is activated.
 
 PS1="$_OLD_VIRTUAL_PS1"
-_OLD_RPROMPT="$RPROMPT"
-RPROMPT="%{${fg_bold[white]}%}(py_env: %{${fg[green]}%}`basename \"$VIRTUAL_ENV\"`%{${fg_bold[white]}%})%{${reset_color}%} $RPROMPT"
+if [ -z "$_OLD_RPROMPT" ]; then
+  _OLD_RPROMPT="$RPROMPT"
+fi
+RPROMPT="%{${fg_bold[white]}%}(py_env: %{${fg[green]}%}`basename \"$VIRTUAL_ENV\"`%{${fg_bold[white]}%})%{${reset_color}%} $_OLD_RPROMPT"
