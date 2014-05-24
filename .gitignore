@@ -199,3 +199,4 @@ libpeerconnection.log
 .audacity-data
 .zcompdump*
 npm-debug.log
+.weechat
