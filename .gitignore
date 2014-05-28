@@ -200,3 +200,5 @@ libpeerconnection.log
 .zcompdump*
 npm-debug.log
 .weechat
+.electrum
+.ipython
