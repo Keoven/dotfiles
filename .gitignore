@@ -75,7 +75,7 @@ SDK
 .bash_history
 .cheat
 .codeintel
-.config
+.config/*
 .cups
 .DBUserDefaults
 .dropbox
@@ -202,3 +202,4 @@ npm-debug.log
 .weechat
 .electrum
 .ipython
+!.config/flake8
