@@ -203,3 +203,5 @@ npm-debug.log
 .electrum
 .ipython
 !.config/flake8
+.lastpass
+.pagekite.rc
