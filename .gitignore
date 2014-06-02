@@ -205,3 +205,6 @@ npm-debug.log
 !.config/flake8
 .lastpass
 .pagekite.rc
+.nvimlog
+.nviminfo
+.erlang.cookie
