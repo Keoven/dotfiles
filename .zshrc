@@ -113,5 +113,10 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -
 #__rvm_project_rvmrc
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# startup virtualenv-burrito
+if [ -f $HOME/.venvburrito/startup.sh ]; then
+    . $HOME/.venvburrito/startup.sh
+fi
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 cd .;
