@@ -209,3 +209,4 @@ npm-debug.log
 .erlang.cookie
 .dockercfg
 .rnd
+*.bnk
