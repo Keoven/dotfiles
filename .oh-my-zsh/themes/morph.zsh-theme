@@ -49,7 +49,7 @@ zstyle ':vcs_info:*:*' stagedstr '✚'
 zstyle ':vcs_info:*:*' unstagedstr '✹'
 zstyle ':vcs_info:*' formats ' %u%c' "%r $SEGMENT_SEPARATOR_THIN %S"
 zstyle ':vcs_info:*' actionformats ' %u%c (%a)' "%r $SEGMENT_SEPARATOR_THIN %S"
-zstyle ':vcs_info:*:*' nvcsformats "%~" ""
+zstyle ':vcs_info:*:*' nvcsformats "" "%~"
 
 
 # Begin a segment
