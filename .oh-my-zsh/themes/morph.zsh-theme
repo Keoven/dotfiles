@@ -27,7 +27,30 @@
 
 CURRENT_BG='NONE'
 SEGMENT_SEPARATOR="⮀"
+SEGMENT_SEPARATOR_THIN="⮁"
 RSEGMENT_SEPARATOR="⮂"
+
+setopt promptsubst
+autoload -U add-zsh-hook
+autoload -Uz vcs_info
+
+# vcs_info
+add-zsh-hook precmd vcs_info
+
+#ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖$FG[071] "
+#ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%}➜$FG[071] "
+#ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%}═$FG[071] "
+#ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}✭$FG[071] "
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' get-revision true
+zstyle ':vcs_info:*:*' check-for-changes true
+zstyle ':vcs_info:*:*' stagedstr '✚'
+zstyle ':vcs_info:*:*' unstagedstr '✹'
+zstyle ':vcs_info:*' formats ' %u%c' "%r $SEGMENT_SEPARATOR_THIN %S"
+zstyle ':vcs_info:*' actionformats ' %u%c (%a)' "%r $SEGMENT_SEPARATOR_THIN %S"
+zstyle ':vcs_info:*:*' nvcsformats "%~" ""
+
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -113,28 +136,6 @@ prompt_git() {
       mode=" >R>"
     fi
 
-    setopt promptsubst
-    # autoload -U add-zsh-hook
-    autoload -Uz vcs_info
-
-    #ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖$FG[071] "
-    #ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%}➜$FG[071] "
-    #ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%}═$FG[071] "
-    #ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}✭$FG[071] "
-
-    zstyle ':vcs_info:*' enable git
-    zstyle ':vcs_info:*' get-revision true
-    zstyle ':vcs_info:*:*' check-for-changes true
-    zstyle ':vcs_info:*:*' stagedstr '✚'
-    zstyle ':vcs_info:*:*' unstagedstr '✹'
-    zstyle ':vcs_info:*' formats ' %u%c'
-    zstyle ':vcs_info:*' actionformats ' %u%c'
-    #zstyle ':vcs_info:*:*' actionformats "%S" "%r ❖ %b %u (%a)"
-    #zstyle ':vcs_info:*:*' formats "%S" "%r ❖ %b %u"
-    #zstyle ':vcs_info:*:*' nvcsformats "%~" ""
-
-    vcs_info
-    # add-zsh-hook precmd vcs_info
     echo -n "${mode}${vcs_info_msg_0_%%} ${ref/refs\/heads\//}  "
   fi
 }
@@ -176,7 +177,8 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue black '%~'
+  prompt_segment blue black
+  echo -n "${vcs_info_msg_1_%%.}"
 }
 
 # Virtualenv: current working virtualenv
