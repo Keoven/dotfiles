@@ -210,3 +210,5 @@ npm-debug.log
 .dockercfg
 .rnd
 *.bnk
+.gnome/
+.gtkrc-2.0
