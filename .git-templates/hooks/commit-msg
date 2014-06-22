@@ -3,6 +3,7 @@
 import re
 import subprocess
 import sys
+import os
 
 # Regex pattern for gitbranch name.
 pattern = r"^(.*)/(?P<ticket>\d+)-.+"
@@ -12,6 +13,7 @@ branchname = subprocess.check_output(
 try:
     template = subprocess.check_output(
         ['/usr/bin/git', 'config', '--get', 'commit.template']).strip()
+    template = os.path.expanduser(template)
 
     with open(template) as f:
         template = f.read()
