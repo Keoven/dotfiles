@@ -1,8 +1,8 @@
 [user]
 	name = Nelvin Driz
-	email = nelvindriz@outlook.com
+	email = nelvindriz@gmail.com
 [commit]
-	template = ~/.git_templates/git-commit-template.default
+	template = ~/.git-templates/git-commit-template.default
 [alias]
 	switch = !legit switch \"$@\"
 	branches = !legit branches
@@ -25,7 +25,7 @@
 	status = auto
 	branch = auto
 [core]
-	excludesfile = /Users/nelvindriz/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
@@ -42,3 +42,5 @@
 	main-window-maximized = false
 	main-window-geometry = 700x848+214+320
 	main-window-view = FileView
+[init]
+	templatedir = ~/.git-templates

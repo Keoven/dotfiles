@@ -90,12 +90,12 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $tag1 "1: terminal"
-set $tag2 "2: vim"
-set $tag3 "3: ssh"
-set $tag4 "4: irc"
-set $tag5 "5: www"
-set $tag6 "6: email"
+set $tag1 "1: shell"
+set $tag2 "2: web"
+set $tag3 "3: email"
+set $tag4 "4: im"
+set $tag5 "5: irc"
+set $tag6 "6: music"
 
 # switch to workspace
 bindsym $mod+1 workspace $tag1
