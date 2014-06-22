@@ -47,9 +47,9 @@ zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*:*' check-for-changes true
 zstyle ':vcs_info:*:*' stagedstr '✚'
 zstyle ':vcs_info:*:*' unstagedstr '✹'
-zstyle ':vcs_info:*' formats ' %u%c' "%r $SEGMENT_SEPARATOR_THIN %S"
-zstyle ':vcs_info:*' actionformats ' %u%c (%a)' "%r $SEGMENT_SEPARATOR_THIN %S"
-zstyle ':vcs_info:*:*' nvcsformats "" "%~"
+zstyle ':vcs_info:*' formats ' %u%c' "%r $SEGMENT_SEPARATOR_THIN ~/%S"
+zstyle ':vcs_info:*' actionformats ' %u%c (%a)' "%r $SEGMENT_SEPARATOR_THIN ~/%S"
+zstyle ':vcs_info:*:*' nvcsformats "" "• $SEGMENT_SEPARATOR_THIN %~"
 
 
 # Begin a segment
@@ -177,7 +177,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue black
+  prompt_segment blue white
   echo -n "${vcs_info_msg_1_%%.}"
 }
 
@@ -221,4 +221,4 @@ build_rprompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
-RPROMPT='%{%f%b%k%}$(build_rprompt)'
+RPROMPT='$(build_rprompt)'
