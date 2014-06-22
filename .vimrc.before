@@ -4,7 +4,7 @@ let g:Powerline_symbols = 'fancy'
 call janus#disable_plugin('ack')
 call janus#disable_plugin('ctrlp')
 call janus#disable_plugin('supertab')
-call janus#disable_plugin('tagbar')
+"call janus#disable_plugin('tagbar')
 call janus#disable_plugin('snipmate')
 call janus#disable_plugin('buffergator')
 call janus#disable_plugin('vroom')

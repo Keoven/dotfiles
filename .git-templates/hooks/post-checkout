@@ -1,0 +1,4 @@
+#! /bin/sh
+
+PROJECT_ROOT=$(pwd | sed 's/.git\/hooks$//g')
+find $PROJECT_ROOT -name "*.pyc" -exec rm -rf {} \;
