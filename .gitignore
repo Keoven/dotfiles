@@ -213,3 +213,5 @@ npm-debug.log
 .gnome/
 .gtkrc-2.0
 hipchatlog.txt
+.fasd
+.fasd-init-bash
