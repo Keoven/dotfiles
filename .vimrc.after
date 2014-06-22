@@ -38,3 +38,5 @@ function! RemoveTab()
  set ffs=dos
  retab!
 endfunction
+
+cmap w!! w !sudo tee % > /dev/null
