@@ -45,8 +45,8 @@ add-zsh-hook precmd vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*:*' check-for-changes true
-zstyle ':vcs_info:*:*' stagedstr '✚'
-zstyle ':vcs_info:*:*' unstagedstr '✹'
+zstyle ':vcs_info:*:*' stagedstr '✚ '
+zstyle ':vcs_info:*:*' unstagedstr '✹ '
 zstyle ':vcs_info:*' formats ' %u%c' "%r $SEGMENT_SEPARATOR_THIN ~/%S"
 zstyle ':vcs_info:*' actionformats ' %u%c (%a)' "%r $SEGMENT_SEPARATOR_THIN ~/%S"
 zstyle ':vcs_info:*:*' nvcsformats "" "• $SEGMENT_SEPARATOR_THIN %~"
@@ -136,7 +136,7 @@ prompt_git() {
       mode=" >R>"
     fi
 
-    echo -n "${mode}${vcs_info_msg_0_%%} ${ref/refs\/heads\//}  "
+    echo -n "${mode}${vcs_info_msg_0_%%}${ref/refs\/heads\//}  "
   fi
 }
 
