@@ -7,8 +7,12 @@ import os
 
 # Regex pattern for gitbranch name.
 pattern = r"^(.*)/(?P<ticket>\d+)-.+"
-branchname = subprocess.check_output(
-    ['/usr/bin/git', 'rev-parse', '--abbrev-ref', 'HEAD'])
+try:
+    branchname = subprocess.check_output(
+        ['/usr/bin/git', 'rev-parse', '--abbrev-ref', 'HEAD'])
+except Exception:
+    branchname = 'None'
+
 
 try:
     template = subprocess.check_output(
