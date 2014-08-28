@@ -44,3 +44,5 @@
 	main-window-view = FileView
 [init]
 	templatedir = ~/.git-templates
+[tag]
+	sort = version:refname
