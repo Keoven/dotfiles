@@ -1,15 +1,16 @@
 " For theme support in gnome terminal (Ubuntu)
 if $COLORTERM == 'gnome-terminal'
+  syntax on
+  let g:solarized_termcolors=256
   set t_Co=256
-  syntax enable
+
   if has('gui_running')
     set background=light
   else
     set background=dark
   endif
-  let g:solarized_termcolors=256
+
   color solarized
-  hi Normal ctermbg=NONE
 else
   syntax on
   set background=dark
