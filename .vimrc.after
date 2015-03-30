@@ -11,6 +11,10 @@ if $COLORTERM == 'gnome-terminal'
   endif
 
   color solarized
+
+  " This should be set when
+  " gnome-terminal is set to Solarized Theme
+  hi Normal ctermbg=NONE
 else
   syntax on
   set background=dark
