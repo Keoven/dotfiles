@@ -69,14 +69,8 @@ case "$OSTYPE" in
     alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc' ;;
 esac
 
-#alias foreman="wrapped_foreman"
-#alias lunchy="wrapped_lunchy"
-#alias htty="wrapped_htty"
-#alias nginx-start="sudo nginx"
-#alias nginx-stop="sudo nginx -s stop"
-#alias nginx-restart="sudo nginx -s reload"
-#alias nginx-conf="sudo vim /usr/local/etc/nginx/nginx.conf"
-#alias hosts="sudo vim /etc/hosts"
+alias hosts="sudo vim /etc/hosts"
+alias git-clean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 
 function redis-reset {
   redis-cli keys  "*" | while read LINE ; do TTL=$(redis-cli ttl $LINE); if [ $TTL -eq -1 ]; then echo "Del $LINE"; RES=$(redis-cli del $LINE); fi; done;
