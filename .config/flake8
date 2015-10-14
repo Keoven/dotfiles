@@ -1,3 +1,2 @@
 [flake8]
-ignore = F821,F403,E712,E123,E711
-max_line_length = 85
+ignore = F821,F403,E712,E123,E711,E501

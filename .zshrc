@@ -28,6 +28,8 @@ plugins=()
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export GOPATH=$HOME/Workspace
+export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin
 export PATH=$HOME/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
