@@ -21,6 +21,8 @@ Ubuntu One/
 SDK
 
 # Artifacts
+.gnupg
+.yarnrc
 .opera
 .shutter
 .deltafy/
@@ -88,6 +90,7 @@ SDK
 .inkscape-etc
 .npm
 .nvm
+.tox
 .oh-my-zsh/README.textile
 .oh-my-zsh/lib
 .oh-my-zsh/custom
@@ -115,6 +118,7 @@ SDK
 .ssh
 .ssl
 .subversion
+.emacs.d
 .vim
 .viminfo
 .vimrc
@@ -125,6 +129,7 @@ SDK
 .virtualenvs/*
 !.virtualenvs/postactivate
 
+.fehbg
 .ICEauthority
 .bash_login
 .bash_logout
@@ -160,6 +165,7 @@ examples.desktop
 .tmux-powerline
 .cf
 .speech-dispatcher
+.boto
 
 # Ubuntu
 .compiz/

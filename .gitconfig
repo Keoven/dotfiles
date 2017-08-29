@@ -1,6 +1,6 @@
 [user]
 	name = Nelvin Driz
-	email = nelvindriz@gmail.com
+	email = iam@nelv.in
 [commit]
 	template = ~/.git-templates/git-commit-template.default
 [alias]
@@ -19,6 +19,10 @@
   coco = !sh -c 'git branch -a --contains $0'
   cmpb = !sh -c 'git cherry -v $0'
 	alias = config --get-regexp 'alias.*'
+  latest-tag = !git tag | tail -1
+  release-commits = !git shortlog --pretty=format:\"%h %s\" --no-merges $(git latest-tag)..master
+  release-diff = !git diff $(git latest-tag)..master
+  clean-branches = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
 [color]
 	diff = auto
 	interactive = auto
