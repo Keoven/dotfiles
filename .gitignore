@@ -23,6 +23,7 @@ SDK
 # Artifacts
 .gnupg
 .yarnrc
+.idea
 .opera
 .shutter
 .deltafy/
