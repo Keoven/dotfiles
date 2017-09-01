@@ -23,6 +23,7 @@ Public/
 .DS_Store
 .bash_sessions
 .histfile
+.idea
 
 # Application Data
 .config/configstore/
