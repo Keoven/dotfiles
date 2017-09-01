@@ -26,9 +26,25 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR="⮀"
-SEGMENT_SEPARATOR_THIN="⮁"
-RSEGMENT_SEPARATOR="⮂"
+
+# Special Powerline characters
+
+() {
+  local LC_ALL="" LC_CTYPE="en_US.UTF-8"
+  # NOTE: This segment separator character is correct.  In 2012, Powerline changed
+  # the code points they use for their special characters. This is the new code point.
+  # If this is not working for you, you probably have an old version of the
+  # Powerline-patched fonts installed. Download and install the new version.
+  # Do not submit PRs to change this unless you have reviewed the Powerline code point
+  # history and have new information.
+  # This is defined using a Unicode escape sequence so it is unambiguously readable, regardless of
+  # what font the user is viewing this source code in. Do not replace the
+  # escape sequence with a single literal character.
+  # Do not change this! Do not make it '\u2b80'; that is the old, wrong code point.
+  SEGMENT_SEPARATOR=$'\ue0b0'
+  SEGMENT_SEPARATOR_THIN=$'\ue0b1'
+  RSEGMENT_SEPARATOR=$'\ue0b2'
+}
 
 setopt promptsubst
 autoload -U add-zsh-hook

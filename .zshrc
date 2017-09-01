@@ -50,8 +50,7 @@ else # Windows
   export CC=gcc-4.2
 fi
 
-export BUNDLER_EDITOR=mvim
-
+export BUNDLER_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
 
@@ -61,15 +60,6 @@ alias bcat="wrapped_bcat"
 alias synergy-start="synergys -f --config ~/.synergy.conf"
 alias gdoc="gem server"
 alias serve-directory="ruby -r webrick -e \"s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
-
-case "$OSTYPE" in
-  linux*)
-    alias open="xdg-open"
-    alias dark-terminal=". ~/.gnome-terminal-colors-solarized/set_dark.sh"
-    alias light-terminal=". ~/.gnome-terminal-colors-solarized/set_light.sh" ;;
-  darwin*)
-    alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc' ;;
-esac
 
 alias hosts="sudo vim /etc/hosts"
 alias git-clean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
@@ -86,11 +76,6 @@ function alert-on-finish {
     say -v Trinoid “Task Error”
   fi
 }
-
-# Tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-export EDITOR=vim
-export SHELL=zsh
 
 # Project Alias
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"
