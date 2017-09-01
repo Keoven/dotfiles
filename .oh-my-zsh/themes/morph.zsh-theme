@@ -91,7 +91,7 @@ prompt_end() {
   else
     echo -n "%{%k%}"
   fi
-  echo -n "%{%f%}"
+  echo -n "%{%f%} "
   CURRENT_BG=''
 }
 
