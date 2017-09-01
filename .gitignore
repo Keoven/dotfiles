@@ -16,7 +16,7 @@ Public/
 .CFUserTextEncoding
 .bash_history
 .lesshst
-.zcompdump
+.zcompdump*
 .zsh-update
 .zsh_history
 .zshrc.pre-oh-my-zsh
@@ -47,6 +47,11 @@ Public/
 !.oh-my-zsh/themes/morph.zsh-theme
 .tmux-powerline
 .janus
+
+# Development Data
 .virtualenv/*
 !.virtualenvs/postactivate
 .boto
+.npm
+.nvm
+.pyenv

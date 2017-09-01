@@ -3,12 +3,6 @@ export ZLE_RPROMPT_INDENT=0
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-export ZSH_THEME="morph"
-
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -32,6 +26,10 @@ export GOPATH=$HOME/Workspace
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin
 export PATH=$HOME/local/bin:$PATH
+if [ -d "$HOME/Library/Python/2.7/bin" ]; then
+    export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+fi
+
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/Cellar/ruby/1.9.3-p125/bin:$PATH
@@ -40,15 +38,9 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PAGER=less
 
-export LC_CTYPE=en_US.UTF-8 # For Cucumber Gherkin/JSON Compatibility Fix
-# https://github.com/cucumber/gherkin/issues/192
-
-if [ -e /proc/version ]
-then # Linux
-  export CC=gcc-4.8
-else # Windows
-  export CC=gcc-4.2
-fi
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 export BUNDLER_EDITOR=vim
 export VISUAL=vim
@@ -82,33 +74,20 @@ function alert-on-finish {
 
 # NVM
 export NVM_DIR=$HOME/.nvm
-[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+[[ -s "/usr/local/opt/nvm/nvm.sh" ]] && source "/usr/local/opt/nvm/nvm.sh"
 
-#echo "Last OSS Commit: $(curl -s "http://calendaraboutnothing.com/~keoven.json" | sed -E 's/.*"(.*)"].*/\1/')"
+eval "$(pyenv init -)"
 [[ -s "/usr/local/share/python/virtualenvwrapper.sh" ]] && source /usr/local/share/python/virtualenvwrapper.sh
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 # RVM
 #unsetopt auto_name_dirs
 #__rvm_project_rvmrc
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# startup virtualenv-burrito
-if [ -f $HOME/.venvburrito/startup.sh ]; then
-    . $HOME/.venvburrito/startup.sh
-fi
-
-if [ -e "$(which fasd)" ]; then
-  fasd_cache="$HOME/.fasd-init-bash"
-  if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-    fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install >| "$fasd_cache"
-  fi
-  source "$fasd_cache"
-  unset fasd_cache
-fi
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 cd .;
+
+# Setup Prompt
+autoload -U promptinit; promptinit
+prompt pure
