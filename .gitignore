@@ -27,6 +27,7 @@ Public/
 
 # Application Data
 .config/configstore/
+.config/yarn/
 .dropbox/
 .subversion/
 .ssh
@@ -56,3 +57,5 @@ Public/
 .npm
 .nvm
 .pyenv
+.yarn
+.yarnrc
