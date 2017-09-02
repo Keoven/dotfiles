@@ -62,6 +62,9 @@ function docker-clean {
   docker volume rm $(docker volume ls -f dangling=true -q)
 }
 
+# Database Aliases and Functions
+alias psql-start="pg_ctl -D /usr/local/var/postgres start"
+alias redis-start="redis-server /usr/local/etc/redis.conf --daemonize yes"
 function redis-reset {
   redis-cli keys  "*" | while read LINE ; do TTL=$(redis-cli ttl $LINE); if [ $TTL -eq -1 ]; then echo "Del $LINE"; RES=$(redis-cli del $LINE); fi; done;
 }
