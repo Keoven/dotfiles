@@ -56,6 +56,12 @@ alias serve-directory="ruby -r webrick -e \"s = WEBrick::HTTPServer.new(:Port =>
 alias hosts="sudo vim /etc/hosts"
 alias git-clean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 
+function docker-clean {
+  docker rmi $(docker images -f dangling=true -q)
+  docker rm $(docker ps -a -f status=exited -q)
+  docker volume rm $(docker volume ls -f dangling=true -q)
+}
+
 function redis-reset {
   redis-cli keys  "*" | while read LINE ; do TTL=$(redis-cli ttl $LINE); if [ $TTL -eq -1 ]; then echo "Del $LINE"; RES=$(redis-cli del $LINE); fi; done;
 }

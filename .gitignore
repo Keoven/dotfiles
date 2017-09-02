@@ -49,6 +49,7 @@ Public/
 .janus
 
 # Development Data
+.docker
 .virtualenv/*
 !.virtualenvs/postactivate
 .boto
