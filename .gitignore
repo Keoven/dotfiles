@@ -50,10 +50,12 @@ Public/
 .janus
 
 # Development Data
+.cache
 .docker
 .virtualenv/*
 !.virtualenvs/postactivate
 .boto
+.node-gyp
 .npm
 .nvm
 .pyenv
