@@ -4,7 +4,7 @@ set columns=100
 "set background=light
 set background=dark
 colorscheme solarized
-set guifont=Menlo:h12
+set guifont=Fira\ Code:h10
 
 autocmd BufWritePre * :%s/\s\+$//e
 

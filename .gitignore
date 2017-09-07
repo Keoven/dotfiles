@@ -31,6 +31,7 @@ Public/
 .dropbox/
 .subversion/
 .ssh
+.NERDTreeBookmarks
 .viminfo
 .vimrc
 .gvimrc
@@ -50,6 +51,7 @@ Public/
 .janus
 
 # Development Data
+.local/
 .cache
 .docker
 .virtualenv/*
@@ -61,3 +63,5 @@ Public/
 .pyenv
 .yarn
 .yarnrc
+.psql_history
+.rediscli_history
