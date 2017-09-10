@@ -42,6 +42,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
+export POWERLINE_DIRECTORY=$(pip show powerline-status | grep Location | cut -d " " -f 2)
 export BUNDLER_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
