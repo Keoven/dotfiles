@@ -40,6 +40,11 @@ if [[ -f "$PWD/.rvmrc" ]]; then
   . "$PWD/.rvmrc"
 fi
 
+# AWS
+if [[ -f "$PWD/.awsrc" ]]; then
+  . "$PWD/.awsrc"
+fi
+
 source ~/.profile
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

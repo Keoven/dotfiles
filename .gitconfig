@@ -3,6 +3,7 @@
 	email = iam@nelv.in
 [commit]
 	template = ~/.git-templates/git-commit-template.default
+	gpgsign = true
 [alias]
 	switch = !legit switch \"$@\"
 	branches = !legit branches

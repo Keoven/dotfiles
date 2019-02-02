@@ -22,6 +22,9 @@ plugins=()
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+alias gpg-restart="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
+
 export GOPATH=$HOME/Workspace
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin
@@ -81,6 +84,9 @@ function alert-on-finish {
 
 # Project Alias
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"
+
+# AWS
+[[ -s "$HOME/.awsrc" ]] && source "$HOME/.awsrc"
 
 # NVM
 export NVM_DIR=$HOME/.nvm
