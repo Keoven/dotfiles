@@ -40,6 +40,8 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PAGER=less
 
+# Setup GPG
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export LC_CTYPE=en_US.UTF-8 # For Cucumber Gherkin/JSON Compatibility Fix
 # https://github.com/cucumber/gherkin/issues/192
 
