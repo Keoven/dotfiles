@@ -25,9 +25,13 @@ endif
 " Allow CTRL+C into default into system clipboard
 vmap <C-c> "+y
 
-" Remove all trailing spaces
-autocmd BufWritePre * :%s/\s\+$//e
-" au BufWritePre * $put _ | $;?\(^\s*$\)\@!?+1,$d
+fun! StripTrailingWhitespace()
+    if exists('b:stripWhitespace')
+        %s/\s\+$//e
+    endif
+endfun
+autocmd BufWritePre * call StripTrailingWhitespace()
+autocmd FileType ruby,javascript,python let b:stripWhitespace=1
 
 " Python Setup
 let g:jedi#popup_on_dot = 0
