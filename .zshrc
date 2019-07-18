@@ -42,8 +42,7 @@ export PAGER=less
 
 # Setup GPG
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-export LC_CTYPE=en_US.UTF-8 # For Cucumber Gherkin/JSON Compatibility Fix
-# https://github.com/cucumber/gherkin/issues/192
+alias gpg-restart="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 
 if [ -e /proc/version ]
 then # Linux
