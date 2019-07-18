@@ -58,10 +58,6 @@ export VISUAL=vim
 export EDITOR=vim
 
 # Global Alias
-alias cheat="wrapped_cheat"
-alias bcat="wrapped_bcat"
-alias synergy-start="synergys -f --config ~/.synergy.conf"
-alias gdoc="gem server"
 alias serve-directory="ruby -r webrick -e \"s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
 
 case "$OSTYPE" in
@@ -75,6 +71,9 @@ esac
 
 alias hosts="sudo vim /etc/hosts"
 alias git-clean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+alias redis-start='redis-server /home/linuxbrew/.linuxbrew/etc/redis.conf --daemonize yes'
+alias pg-start='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres start'
+alias pg-stop='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres stop'
 
 function redis-reset {
   redis-cli keys  "*" | while read LINE ; do TTL=$(redis-cli ttl $LINE); if [ $TTL -eq -1 ]; then echo "Del $LINE"; RES=$(redis-cli del $LINE); fi; done;
@@ -98,25 +97,15 @@ export SHELL=zsh
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"
 
 # NVM
-export NVM_DIR=$HOME/.nvm
-[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
 
 #echo "Last OSS Commit: $(curl -s "http://calendaraboutnothing.com/~keoven.json" | sed -E 's/.*"(.*)"].*/\1/')"
-[[ -s "/usr/local/share/python/virtualenvwrapper.sh" ]] && source /usr/local/share/python/virtualenvwrapper.sh
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 # RVM
 #unsetopt auto_name_dirs
 #__rvm_project_rvmrc
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# startup virtualenv-burrito
-if [ -f $HOME/.venvburrito/startup.sh ]; then
-    . $HOME/.venvburrito/startup.sh
-fi
 
 if [ -e "$(which fasd)" ]; then
   fasd_cache="$HOME/.fasd-init-bash"
@@ -129,3 +118,7 @@ fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 cd .;
+
+# ZSH Completions
+fpath=(/home/linuxbrew/.linuxbrew/share/zsh-completions $fpath)
+fpath+=('$HOME/.nvm/versions/node/v10.16.0/lib/node_modules/pure-prompt/functions')

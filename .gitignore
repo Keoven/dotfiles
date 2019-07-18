@@ -69,6 +69,9 @@ SDK
 .serverauth.*
 .keys
 .quicksnips
+.SpaceVim.d/          
+.SpaceVim/            
+.cpan/                
 
 # Application Data
 .icedtea
