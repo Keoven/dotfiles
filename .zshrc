@@ -42,7 +42,6 @@ export PAGER=less
 
 # Setup GPG
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-alias gpg-restart="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 
 if [ -e /proc/version ]
 then # Linux
@@ -58,21 +57,20 @@ export EDITOR=vim
 
 # Global Alias
 alias serve-directory="ruby -r webrick -e \"s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
-
-case "$OSTYPE" in
-  linux*)
-    alias open="xdg-open"
-    alias dark-terminal=". ~/.gnome-terminal-colors-solarized/set_dark.sh"
-    alias light-terminal=". ~/.gnome-terminal-colors-solarized/set_light.sh" ;;
-  darwin*)
-    alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc' ;;
-esac
-
+alias gpg-restart="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 alias hosts="sudo vim /etc/hosts"
 alias git-clean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+alias pyc-clean="find . -name '*.pyc' -delete"
 alias redis-start='redis-server /home/linuxbrew/.linuxbrew/etc/redis.conf --daemonize yes'
+alias redis-stop='redis-cli shutdown'
 alias pg-start='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres start'
 alias pg-stop='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres stop'
+
+function docker-clean {
+  docker rmi $(docker images -f dangling=true -q)
+  docker rm $(docker ps -a -f status=exited -q)
+  docker volume rm $(docker volume ls -f dangling=true -q)
+}
 
 function redis-reset {
   redis-cli keys  "*" | while read LINE ; do TTL=$(redis-cli ttl $LINE); if [ $TTL -eq -1 ]; then echo "Del $LINE"; RES=$(redis-cli del $LINE); fi; done;
