@@ -60,11 +60,13 @@ alias serve-directory="ruby -r webrick -e \"s = WEBrick::HTTPServer.new(:Port =>
 alias gpg-restart="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 alias hosts="sudo vim /etc/hosts"
 alias git-clean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
-alias pyc-clean="find . -name '*.pyc' -delete"
+alias pyc-clean="sudo find . -name '*.pyc' -delete"
 alias redis-start='redis-server /home/linuxbrew/.linuxbrew/etc/redis.conf --daemonize yes'
 alias redis-stop='redis-cli shutdown'
-alias pg-start='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres start'
-alias pg-stop='pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres stop'
+alias pg-start='sudo -u postgres pg_ctlcluster 10 main start'
+alias pg-stop='sudo -u postgres pg_ctlcluster 10 main stop'
+alias go='grc go'
+alias make='grc make'
 
 function docker-clean {
   docker rmi $(docker images -f dangling=true -q)

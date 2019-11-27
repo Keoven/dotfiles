@@ -1,0 +1,20 @@
+regexp==== RUN .*
+colour=white
+-
+regexp=--- PASS: .*
+colour=green
+-
+regexp=^PASS$
+colour=green
+-
+regexp=^(ok|\?) .*
+colour=white
+-
+regexp=--- FAIL: .*
+colour=red
+-
+regexp=^FAIL.*
+colour=red
+-
+regexp=[^\s]+\.go(:\d+)?
+colour=cyan
