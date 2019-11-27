@@ -55,6 +55,7 @@ snap/
 .lesshst
 .mkvtoolnix
 .pow
+.python_history
 .pry_history
 .serverauth.8101
 .sh_history
