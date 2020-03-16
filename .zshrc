@@ -74,6 +74,31 @@ function docker-clean {
   docker volume rm $(docker volume ls -f dangling=true -q)
 }
 
+function docker-run {
+  container_name=$1
+  image=$2
+  env_file=$3
+
+  echo
+  echo "Container Name: $container_name"
+  echo "Image: $image"
+  echo "Environment File: $env_file"
+  echo "=================================================================================================================="
+  echo "docker run -d --rm \
+    --name $container_name \
+    --env-file $env_file \
+    -v $(pwd):/app \
+    $image tail -f /dev/null
+  "
+  echo
+
+  docker run -d --rm \
+    --name $container_name \
+    --env-file $env_file \
+    -v $(pwd):/app \
+    $image tail -f /dev/null
+}
+
 function redis-reset {
   redis-cli keys  "*" | while read LINE ; do TTL=$(redis-cli ttl $LINE); if [ $TTL -eq -1 ]; then echo "Del $LINE"; RES=$(redis-cli del $LINE); fi; done;
 }
