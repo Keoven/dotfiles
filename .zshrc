@@ -65,6 +65,7 @@ alias redis-start='redis-server /home/linuxbrew/.linuxbrew/etc/redis.conf --daem
 alias redis-stop='redis-cli shutdown'
 alias pg-start='sudo -u postgres pg_ctlcluster 10 main start'
 alias pg-stop='sudo -u postgres pg_ctlcluster 10 main stop'
+alias pg-user='sudo -i -u postgres'
 alias go='grc go'
 alias make='grc make'
 
@@ -79,12 +80,25 @@ function docker-run {
   image=$2
   env_file=$3
 
+  if [ -z "$container_name" ] || [ -z $image ] || [ -z $env_file ]
+  then
+    echo "Missing arguements!"
+    echo "Example usage: docker-run container_name image path/to/env.list"
+    echo
+    echo "env.list should contain the following:"
+    echo
+    echo "ENVIRONMENT_VARIABLE=XXX"
+    echo
+    return 1
+  fi
+
   echo
   echo "Container Name: $container_name"
   echo "Image: $image"
   echo "Environment File: $env_file"
-  echo "=================================================================================================================="
+  echo "================================================================="
   echo "docker run -d --rm \
+    --security-opt=seccomp:unconfined \
     --name $container_name \
     --env-file $env_file \
     -v $(pwd):/app \
@@ -93,6 +107,7 @@ function docker-run {
   echo
 
   docker run -d --rm \
+    --security-opt=seccomp:unconfined \
     --name $container_name \
     --env-file $env_file \
     -v $(pwd):/app \
