@@ -24,6 +24,8 @@ Public/
 .bash_sessions
 .histfile
 .idea
+.vscode
+.zsh_sessions
 
 # Application Data
 .config/configstore/
@@ -47,8 +49,16 @@ Public/
 .oh-my-zsh/themes/*
 .oh-my-zsh/*
 !.oh-my-zsh/themes/morph.zsh-theme
+!.Spacevim.d
 .tmux-powerline
 .janus
+.SpaceVim.d/
+.SpaceVim/
+.config/iterm2/
+.gnupg/
+.gnupg_pre_2.1/
+.nvim
+.vim
 
 # Development Data
 .local/

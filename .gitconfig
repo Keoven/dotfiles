@@ -13,7 +13,7 @@
 	sync = !legit sync \"$@\"
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
-  lo = log --online --decorate
+  lo = log --oneline --decorate --format=\"%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s\"
   st = status -sb
   psr = !sh -c 'git push --set-upstream $0 $1'
   cco = !sh -c 'git name-rev --name-only $0'

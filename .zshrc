@@ -36,6 +36,13 @@ fi
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/Cellar/ruby/1.9.3-p125/bin:$PATH
+
+if [ -s "/opt/homebrew/bin/brew" ]; then
+  if brew ls --versions libpq > /dev/null; then
+    export PATH=$(brew --prefix libpq)/bin:$PATH
+  fi
+fi
+
 export NODE_PATH=/usr/local/lib/node_modules
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -45,7 +52,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-export POWERLINE_DIRECTORY=$(pip show powerline-status | grep Location | cut -d " " -f 2)
+# export POWERLINE_DIRECTORY=$(pip show powerline-status | grep Location | cut -d " " -f 2)
 export BUNDLER_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
@@ -92,7 +99,8 @@ function alert-on-finish {
 export NVM_DIR=$HOME/.nvm
 [[ -s "/usr/local/opt/nvm/nvm.sh" ]] && source "/usr/local/opt/nvm/nvm.sh"
 
-eval "$(pyenv init -)"
+# Python
+# eval "$(pyenv init -)"
 [[ -s "/usr/local/share/python/virtualenvwrapper.sh" ]] && source /usr/local/share/python/virtualenvwrapper.sh
 
 
@@ -101,9 +109,20 @@ eval "$(pyenv init -)"
 #__rvm_project_rvmrc
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# ASDF
+[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh" 
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 cd .;
 
+# Homebrew
+[[ -s "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Setup Prompt
 autoload -U promptinit; promptinit
+[[ -s "/opt/homebrew/bin/brew" ]] && fpath+=("$(brew --prefix)/share/zsh/site-functions")
 prompt pure
+
+[[ -s "$HOME/.asdf/asdf.sh" ]] && fpath=(${ASDF_DIR}/completions $fpath) 
+autoload -Uz compinit && compinit
+[[ -s "$HOME/.asdf/asdf.sh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
