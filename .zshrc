@@ -40,8 +40,13 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PAGER=less
 
+if [ -s "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # Setup GPG
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+alias gpg-restart="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 
 if [ -e /proc/version ]
 then # Linux
@@ -50,8 +55,11 @@ else # Windows
   export CC=gcc-4.2
 fi
 
-export BUNDLER_EDITOR=mvim
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
+export BUNDLER_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
 
@@ -114,6 +122,9 @@ function docker-run {
     $image tail -f /dev/null
 }
 
+# Database Aliases and Functions
+alias psql-start="pg_ctl -D /usr/local/var/postgres start"
+alias redis-start="redis-server /usr/local/etc/redis.conf --daemonize yes"
 function redis-reset {
   redis-cli keys  "*" | while read LINE ; do TTL=$(redis-cli ttl $LINE); if [ $TTL -eq -1 ]; then echo "Del $LINE"; RES=$(redis-cli del $LINE); fi; done;
 }
@@ -127,6 +138,8 @@ function alert-on-finish {
   fi
 }
 
+alias fix-term="stty sane"
+
 # Tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 export EDITOR=vim
@@ -138,8 +151,6 @@ export SHELL=zsh
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-
-#echo "Last OSS Commit: $(curl -s "http://calendaraboutnothing.com/~keoven.json" | sed -E 's/.*"(.*)"].*/\1/')"
 
 # RVM
 #unsetopt auto_name_dirs
