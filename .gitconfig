@@ -1,6 +1,7 @@
 [user]
 	name = Nelvin Driz
 	email = iam@nelv.in
+ 	signingkey = 08C89415556B937D
 [commit]
 	template = ~/.git-templates/git-commit-template.default
 	gpgsign = true

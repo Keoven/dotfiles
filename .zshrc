@@ -48,12 +48,7 @@ fi
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 alias gpg-restart="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 
-if [ -e /proc/version ]
-then # Linux
-  export CC=gcc-4.8
-else # Windows
-  export CC=gcc-4.2
-fi
+export CC=gcc
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -148,23 +143,9 @@ export SHELL=zsh
 # Project Alias
 [[ -s "$HOME/.project_aliases" ]] && source "$HOME/.project_aliases"
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
 
-# RVM
-#unsetopt auto_name_dirs
-#__rvm_project_rvmrc
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-if [ -e "$(which fasd)" ]; then
-  fasd_cache="$HOME/.fasd-init-bash"
-  if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-    fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install >| "$fasd_cache"
-  fi
-  source "$fasd_cache"
-  unset fasd_cache
-fi
+# ASDF
+[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh" 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 cd .;

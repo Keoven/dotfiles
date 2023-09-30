@@ -71,9 +71,9 @@ snap/
 .serverauth.*
 .keys
 .quicksnips
-.SpaceVim.d/          
 .SpaceVim/            
 .cpan/                
+.asdf
 
 # Application Data
 .icedtea
