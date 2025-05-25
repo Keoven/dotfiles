@@ -1,77 +1,93 @@
-# Folders
-Workspace/
-Creative Cloud Files/
-Applications/
+# --- User/System Folders ---
 Desktop/
 Documents/
 Downloads/
-Dropbox/
 Library/
 Movies/
 Music/
 Pictures/
 Public/
+Applications/
+Creative Cloud Files/
+Dropbox/
 
-# Artifacts
-.CFUserTextEncoding
-.bash_history
-.lesshst
-.zcompdump*
-.zsh-update
-.zsh_history
-.zshrc.pre-oh-my-zsh
+# --- Workspace/Project Folders ---
+Workspace/
+
+# --- IDE/Editor Settings ---
+.idea/
+.vscode/
+
+# --- System Files ---
 .DS_Store
+.CFUserTextEncoding
+
+# --- Shell/Terminal Files ---
+.bash_history
 .bash_sessions
 .histfile
-.idea
-.vscode
+.zsh_history
+.zsh-update
+.zshrc.pre-oh-my-zsh
+.zcompdump*
 .zsh_sessions
 
-# Application Data
-.config/configstore/
-.config/yarn/
-.dropbox/
-.subversion/
-.ssh
-.NERDTreeBookmarks
-.viminfo
+# --- Vim/Editor Files ---
+.viminfo*
 .vimrc
 .gvimrc
-.vim/
-.oh-my-zsh/README.textile
-.oh-my-zsh/lib
-.oh-my-zsh/custom
-.oh-my-zsh/log
-.oh-my-zsh/oh-my-zsh.sh
-.oh-my-zsh/plugins
-.oh-my-zsh/templates
-.oh-my-zsh/tools
-.oh-my-zsh/themes/*
-.oh-my-zsh/*
-!.oh-my-zsh/themes/morph.zsh-theme
-!.Spacevim.d
-.tmux-powerline
-.janus
-.SpaceVim.d/
-.SpaceVim/
-.config/iterm2/
-.gnupg/
-.gnupg_pre_2.1/
-.nvim
 .vim
+.nvm
+.nvim
+.gk/
+.cursor/
+.cursor-tutor/
+.lesshst
 
-# Development Data
+# --- Application Data ---
+.config/
+.dropbox/
+.subversion/
+.ssh/
+.NERDTreeBookmarks
+.gnupg*/
+.matplotlib/
+.pgadmin/
+.python_history
+.rdbg_history
+.tmux-powerline
+.SpaceVim*/
+
+# --- Credentials ---
+.credentials/
+
+# --- Oh My Zsh ---
+.oh-my-zsh/
+!.oh-my-zsh/themes/morph.zsh-theme
+
+# --- Development/Tooling ---
+.cache/
+.docker/
 .local/
-.cache
-.docker
-.virtualenv/*
+.virtualenv/
 !.virtualenvs/postactivate
 .boto
-.node-gyp
-.npm
-.nvm
-.pyenv
-.yarn
+.node-gyp/
+.npm/
+.nvm/
+.pyenv/
+.yarn/
 .yarnrc
 .psql_history
 .rediscli_history
+.BurpSuite/
+.asdf/
+.bundle/
+.irb_history
+.gitkraken/
+.node_repl_history
+
+# --- Miscellaneous ---
+.cups/
+.netrc
+.tool-versions

@@ -6,3 +6,14 @@ custom/
 # temp files directories
 cache/
 log/
+
+# artifacts
+*.swp
+.DS_Store
+
+# editor configs
+.vscode
+.idea
+
+# zcompile cached files
+*.zwc

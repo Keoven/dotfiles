@@ -68,6 +68,7 @@ alias hosts="sudo vim /etc/hosts"
 alias git-clean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 
 function docker-clean {
+  docker system prune --all --force
   docker rmi $(docker images -f dangling=true -q)
   docker rm $(docker ps -a -f status=exited -q)
   docker volume rm $(docker volume ls -f dangling=true -q)
@@ -95,19 +96,9 @@ function alert-on-finish {
 # AWS
 [[ -s "$HOME/.awsrc" ]] && source "$HOME/.awsrc"
 
-# NVM
-export NVM_DIR=$HOME/.nvm
-[[ -s "/usr/local/opt/nvm/nvm.sh" ]] && source "/usr/local/opt/nvm/nvm.sh"
-
 # Python
 # eval "$(pyenv init -)"
 [[ -s "/usr/local/share/python/virtualenvwrapper.sh" ]] && source /usr/local/share/python/virtualenvwrapper.sh
-
-
-# RVM
-#unsetopt auto_name_dirs
-#__rvm_project_rvmrc
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # ASDF
 [[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh" 
@@ -126,3 +117,13 @@ prompt pure
 [[ -s "$HOME/.asdf/asdf.sh" ]] && fpath=(${ASDF_DIR}/completions $fpath) 
 autoload -Uz compinit && compinit
 [[ -s "$HOME/.asdf/asdf.sh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+[[ -s "$HOME/.credentials/credentials.sh" ]] && source "$HOME/.credentials/credentials.sh" 

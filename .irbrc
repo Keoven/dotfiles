@@ -14,7 +14,7 @@ end
 @local_irbrc = File.join(@working_directory, '.irbrc')
 
 if @working_directory != ENV['HOME']
-  load @local_irbrc if File.exists?(@local_irbrc)
+  load @local_irbrc if File.exist?(@local_irbrc)
 end
 
 remove_instance_variable(:@working_directory)
