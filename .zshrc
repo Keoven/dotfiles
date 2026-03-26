@@ -35,7 +35,6 @@ fi
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
-export PATH=/usr/local/Cellar/ruby/1.9.3-p125/bin:$PATH
 
 if [ -s "/opt/homebrew/bin/brew" ]; then
   if brew ls --versions libpq > /dev/null; then
@@ -58,10 +57,7 @@ export VISUAL=vim
 export EDITOR=vim
 
 # Global Alias
-alias cheat="wrapped_cheat"
-alias bcat="wrapped_bcat"
 alias synergy-start="synergys -f --config ~/.synergy.conf"
-alias gdoc="gem server"
 alias serve-directory="ruby -r webrick -e \"s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
 
 alias hosts="sudo vim /etc/hosts"
@@ -103,7 +99,6 @@ function alert-on-finish {
 # ASDF
 [[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh" 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 cd .;
 
 # Homebrew
@@ -127,3 +122,109 @@ esac
 # pnpm end
 
 [[ -s "$HOME/.credentials/credentials.sh" ]] && source "$HOME/.credentials/credentials.sh" 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+# mise
+if [ -f "$HOME/.local/bin/mise" ]; then eval "$($HOME/.local/bin/mise activate zsh)"; fi
+
+# Added by Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Tools
+function enable-press-and-hold() {
+    # Check if the first argument is missing
+    if [ -z "$1" ]; then
+        echo "Error: Missing application identifier."
+        echo "Usage: enable-press-and-hold <bundle-id|app-name>"
+        echo "Example: enable-press-and-hold com.microsoft.VSCode"
+        return 1
+    fi
+
+    # Execute the defaults command
+    defaults write -app "$1" ApplePressAndHoldEnabled -bool false
+
+    echo "Press-and-hold disabled (Key Repeat enabled) for: $1"
+}
+
+# ClaudeCode
+## Vertex Config
+# export CLAUDE_CODE_USE_VERTEX=1
+# export CLOUD_ML_REGION=us-east5
+# export ANTHROPIC_VERTEX_PROJECT_ID={GCP_PROJECT_ID}
+
+## Bifrost Config
+export ANTHROPIC_BASE_URL=http://localhost:8080/anthropic
+export ANTHROPIC_API_KEY=dummy-key
+
+# LLM functions to execute the various tools
+function bifrost() {
+    npx -y @maximhq/bifrost "$@"
+}
+
+function claude-opus() {
+    claude --model vertex/claude-opus-4-6
+}
+
+function claude-gemini-2-5-flash() {
+    claude --model vertex/gemini-2.5-flash
+}
+
+function claude-sonnet-4-5() {
+    if [[ -n "$1" ]]; then
+        claude --model vertex/claude-sonnet-4-5 $1
+    else
+        claude --model vertex/claude-sonnet-4-5 
+    fi
+}
+
+function claude-haiku() {
+    claude --model vertex/claude-haiku-4-5@20251001
+}
+
+function claude-gemini-2-5-pro() {
+    if [[ -n "$1" ]]; then
+        claude --model vertex/gemini-2.5-pro $1
+    else
+        claude --model vertex/gemini-2.5-pro
+    fi
+}
+
+function claude-gemini-3-1-pro-preview() {
+    if [[ -n "$1" ]]; then
+        claude --model vertex/gemini-3.1-pro-preview $1
+    else
+        claude --model vertex/gemini-3.1-pro-preview
+    fi
+}
+
+function claude-gemini-3-pro-preview() {
+    if [[ -n "$1" ]]; then
+        claude --model vertex/gemini-3-pro-preview $1
+    else
+        claude --model vertex/gemini-3-pro-preview
+    fi
+}
+
+function claude-gemini-3-1-flash-lite-preview() {
+    if [[ -n "$1" ]]; then
+        claude --model vertex/gemini-3.1-flash-lite-preview $1
+    else
+        claude --model vertex/gemini-3.1-flash-lite-preview
+    fi
+}
+
+function claude-gemini-3-flash-preview() {
+    if [[ -n "$1" ]]; then
+        claude --model vertex/gemini-3-flash-preview $1
+    else
+        claude --model vertex/gemini-3-flash-preview
+    fi
+}

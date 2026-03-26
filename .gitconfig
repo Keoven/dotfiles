@@ -13,17 +13,17 @@
 	sync = !legit sync \"$@\"
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
-  lo = log --oneline --decorate --format=\"%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s\"
-  st = status -sb
-  psr = !sh -c 'git push --set-upstream $0 $1'
-  cco = !sh -c 'git name-rev --name-only $0'
-  coco = !sh -c 'git branch -a --contains $0'
-  cmpb = !sh -c 'git cherry -v $0'
+	lo = log --oneline --decorate --format=\"%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s\"
+	st = status -sb
+	psr = !sh -c 'git push --set-upstream $0 $1'
+	cco = !sh -c 'git name-rev --name-only $0'
+	coco = !sh -c 'git branch -a --contains $0'
+	cmpb = !sh -c 'git cherry -v $0'
 	alias = config --get-regexp 'alias.*'
-  latest-tag = !git tag | tail -1
-  release-commits = !git shortlog --pretty=format:\"%h %s\" --no-merges $(git latest-tag)..master
-  release-diff = !git diff $(git latest-tag)..master
-  clean-branches = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+	latest-tag = !git for-each-ref --sort=-creatordate --format=\"%(refname:short)\" refs/tags | grep -E \"^v[0-9]+\\\\.[0-9]+\\\\.[0-9]+$\" | head -1
+	release-commits = !git shortlog --pretty=format:\"%h %s\" --no-merges $(git latest-tag)..master
+	release-diff = "!f() { latest=$(git latest-tag); branch=${1:-HEAD}; git diff $latest..$branch; }; f"
+	clean-branches = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
 [color]
 	diff = auto
 	interactive = auto
