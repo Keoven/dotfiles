@@ -92,12 +92,18 @@ function alert-on-finish {
 # AWS
 [[ -s "$HOME/.awsrc" ]] && source "$HOME/.awsrc"
 
+# Environment RC
+[[ -s "$HOME/.envrc" ]] && source "$HOME/.envrc"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
 # Python
 # eval "$(pyenv init -)"
 [[ -s "/usr/local/share/python/virtualenvwrapper.sh" ]] && source /usr/local/share/python/virtualenvwrapper.sh
-
-# ASDF
-[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh" 
 
 cd .;
 
@@ -109,9 +115,7 @@ autoload -U promptinit; promptinit
 [[ -s "/opt/homebrew/bin/brew" ]] && fpath+=("$(brew --prefix)/share/zsh/site-functions")
 prompt pure
 
-[[ -s "$HOME/.asdf/asdf.sh" ]] && fpath=(${ASDF_DIR}/completions $fpath) 
 autoload -Uz compinit && compinit
-[[ -s "$HOME/.asdf/asdf.sh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -123,13 +127,8 @@ esac
 
 [[ -s "$HOME/.credentials/credentials.sh" ]] && source "$HOME/.credentials/credentials.sh" 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
-
 # mise
+export MISE_EXPERIMENTAL=1
 if [ -f "$HOME/.local/bin/mise" ]; then eval "$($HOME/.local/bin/mise activate zsh)"; fi
 
 # Added by Antigravity
@@ -161,8 +160,8 @@ function enable-press-and-hold() {
 # export ANTHROPIC_VERTEX_PROJECT_ID={GCP_PROJECT_ID}
 
 ## Bifrost Config
-export ANTHROPIC_BASE_URL=http://localhost:8080/anthropic
-export ANTHROPIC_API_KEY=dummy-key
+# export ANTHROPIC_BASE_URL=http://localhost:8080/anthropic
+# export ANTHROPIC_API_KEY=dummy-key
 
 # LLM functions to execute the various tools
 function bifrost() {
@@ -228,3 +227,11 @@ function claude-gemini-3-flash-preview() {
         claude --model vertex/gemini-3-flash-preview
     fi
 }
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:$HOME/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
